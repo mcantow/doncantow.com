@@ -13,7 +13,7 @@ Michael's dad's personal site, moved off Squarespace to GitHub Pages.
 - `_workspace/` (not committed): the raw archive of the old site, the mirror tools, and four unused redesign concepts.
 
 ## Hosting
-- Repo `mcantow/doncantow.com`, GitHub Pages from `main` /. Live now at https://michaelcantow.com/doncantow.com/ (the account's custom domain covers project pages).
+- Repo `mcantow/doncantow.com`, GitHub Pages from `main` /. Custom domain set to doncantow.com (CNAME file), so it is never served under michaelcantow.com. Until the domain points here, the site is only reachable once DNS moves; preview locally with `python -m http.server`.
 - Domain doncantow.com is registered at **GoDaddy** (transfer-locked, expires 2027-06-12); Squarespace only hosts the pages. Plan: move the domain to Cloudflare, then add a `CNAME` file containing `doncantow.com` and point DNS at GitHub Pages.
 
 ## Checking changes
