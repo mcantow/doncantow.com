@@ -1,0 +1,23 @@
+/* Squarespace's Adobe fonts (Adobe Garamond Pro, Proxima Nova) can't be taken along; these free look-alikes take their names. */
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-500i.woff2) format('woff2');font-style:italic;font-weight:400;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-500i.woff2) format('woff2');font-style:italic;font-weight:500;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-600i.woff2) format('woff2');font-style:italic;font-weight:600;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-700i.woff2) format('woff2');font-style:italic;font-weight:700;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-500.woff2) format('woff2');font-style:normal;font-weight:400;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-500.woff2) format('woff2');font-style:normal;font-weight:500;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-600.woff2) format('woff2');font-style:normal;font-weight:600;font-display:swap;size-adjust:104%;}
+@font-face{font-family:adobe-garamond-pro;src:url(fonts/EBGaramond-700.woff2) format('woff2');font-style:normal;font-weight:700;font-display:swap;size-adjust:104%;}
+@font-face{font-family:proxima-nova;src:url(fonts/Montserrat-300.woff2) format('woff2');font-style:normal;font-weight:300;font-display:swap;size-adjust:91%;}
+@font-face{font-family:proxima-nova;src:url(fonts/Montserrat-400.woff2) format('woff2');font-style:normal;font-weight:400;font-display:swap;size-adjust:91%;}
+@font-face{font-family:proxima-nova;src:url(fonts/Montserrat-500.woff2) format('woff2');font-style:normal;font-weight:500;font-display:swap;size-adjust:91%;}
+@font-face{font-family:proxima-nova;src:url(fonts/Montserrat-600.woff2) format('woff2');font-style:normal;font-weight:600;font-display:swap;size-adjust:91%;}
+@font-face{font-family:proxima-nova;src:url(fonts/Montserrat-700.woff2) format('woff2');font-style:normal;font-weight:700;font-display:swap;size-adjust:91%;}
+
+/* Home banner: Squarespace's script sized the background video; this does the same with CSS. */
+.sqs-video-background{position:absolute;inset:0;overflow:hidden}
+.sqs-video-background iframe.background-video{position:absolute!important;left:50%!important;top:50%!important;width:max(100%,177.78vh)!important;height:max(56.25vw,100%)!important;min-height:100%;transform:translate(-50%,-50%);pointer-events:none;border:0}
+.sqs-video-background img.custom-fallback-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover;max-width:none!important}
+@media (pointer:coarse){.sqs-video-background iframe.background-video{display:none}}
+
+/* Page banners: Squarespace's script cropped each banner photo for the window size; CSS does it now. */
+.content-fill img[data-image-focal-point]{position:absolute!important;left:0!important;top:0!important;width:100%!important;height:100%!important;object-fit:cover;max-width:none!important}
