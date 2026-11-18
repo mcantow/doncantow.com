@@ -1,0 +1,34 @@
+/* Motion reveal system, copied from michaelcantow.com (css/main.css "REVEAL" and
+   "SECTIONED SCROLL PROGRESSION"), tuned only in colour-free ways.
+   .reveal            fade up + blur clear
+   .reveal-card       3D card entry (rotateX + scale + blur)
+   .reveal-left/right side slide with blur
+   .reveal-stagger>*  children cascade via --i (set by reveal.js)
+   .reveal-line       hairline draws in from the centre (Dad's horizon)    Hidden states only apply under html.rv, set by an inline script in <head>, so the
+   pages stay fully readable if scripts are blocked. */
+:root{--ease-reveal:cubic-bezier(0.22,1,0.36,1);--ease-spring:cubic-bezier(0.16,1,0.3,1)}
+.rv .reveal{opacity:0;transform:translateY(24px);filter:blur(5px);transition:opacity 520ms var(--ease-reveal) var(--reveal-delay,0ms),transform 640ms var(--ease-reveal) var(--reveal-delay,0ms),filter 480ms ease var(--reveal-delay,0ms);will-change:opacity,transform,filter}
+.reveal.is-visible{opacity:1;transform:translateY(0);filter:blur(0)}
+.rv .reveal-card{opacity:0;transform:translateY(36px) rotateX(6deg) scale(.97);filter:blur(6px);transform-origin:50% 100%;transition:opacity 560ms var(--ease-reveal) var(--reveal-delay,0ms),transform 720ms var(--ease-spring) var(--reveal-delay,0ms),filter 500ms ease var(--reveal-delay,0ms);will-change:opacity,transform,filter}
+.reveal-card.is-visible{opacity:1;transform:translateY(0) rotateX(0) scale(1);filter:blur(0)}
+.rv .reveal-left,.rv .reveal-right{opacity:0;filter:blur(5px);transition:opacity 520ms var(--ease-reveal) var(--reveal-delay,0ms),transform 640ms var(--ease-reveal) var(--reveal-delay,0ms),filter 460ms ease var(--reveal-delay,0ms);will-change:opacity,transform,filter}
+.rv .reveal-left{transform:translateX(-32px)}
+.rv .reveal-right{transform:translateX(32px)}
+.reveal-left.is-visible,.reveal-right.is-visible{opacity:1;transform:translateX(0);filter:blur(0)}
+.reveal-stagger>.reveal,.reveal-stagger>.reveal-card,.reveal-stagger>.reveal-left,.reveal-stagger>.reveal-right{--reveal-delay:calc(var(--i,0) * 70ms)}
+.rv .reveal-line{transform:scaleX(0);opacity:0;transition:transform 1800ms var(--ease-reveal) var(--reveal-delay,0ms),opacity 900ms ease var(--reveal-delay,0ms)}
+.reveal-line.is-visible{transform:scaleX(1);opacity:1}
+.posts,.roles,.spec{perspective:1600px;perspective-origin:50% 30%}
+
+/* Sectioned scroll progression + chapter spotlight (desktop, motion allowed) */
+@media (min-width:900px) and (prefers-reduced-motion:no-preference){
+  html{scroll-snap-type:y proximity;scroll-padding-top:0}
+  body>section{scroll-snap-align:start;scroll-snap-stop:normal}
+  body.chapters>section{transition:filter 600ms var(--ease-reveal),opacity 600ms var(--ease-reveal)}
+  body.chapters>section:not(.is-chapter-active){filter:brightness(.64) saturate(.9);opacity:.82}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+html,body{overflow-x:clip}
