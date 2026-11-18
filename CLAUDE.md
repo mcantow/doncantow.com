@@ -13,6 +13,9 @@ Michael's dad's personal site, moved off Squarespace to GitHub Pages.
 - `_workspace/` (not committed): the raw archive of the old site, the mirror tools, and four unused redesign concepts.
 
 ## Hosting
+- **Live now at https://doncantow.pages.dev** (Cloudflare Pages project `doncantow`, account michaelcantow@gmail.com, direct upload, not Git-connected). GitHub Pages can't give it its own address: every Pages site on mcantow goes through michaelcantow.com, and Michael ruled out both that and a separate GitHub org (Nov 2026).
+- Re-publish after a change: copy the committed files (`git ls-files`, minus CLAUDE.md/README.md/.gitignore) to a temp folder, then `npx wrangler pages deploy <folder> --project-name doncantow --branch main`.
+- At the domain move: transfer doncantow.com to Cloudflare and attach it to the `doncantow` Pages project.
 - Repo `mcantow/doncantow.com`, GitHub Pages from `main` /. Custom domain set to doncantow.com (CNAME file), so it is never served under michaelcantow.com. Until the domain points here, the site is only reachable once DNS moves; preview locally with `python -m http.server`.
 - Domain doncantow.com is registered at **GoDaddy** (transfer-locked, expires 2027-06-12); Squarespace only hosts the pages. Plan: move the domain to Cloudflare, then add a `CNAME` file containing `doncantow.com` and point DNS at GitHub Pages.
 
