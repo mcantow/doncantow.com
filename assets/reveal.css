@@ -19,14 +19,14 @@
 .rv .reveal-line{transform:scaleX(0);opacity:0;transition:transform 1800ms var(--ease-reveal) var(--reveal-delay,0ms),opacity 900ms ease var(--reveal-delay,0ms)}
 .reveal-line.is-visible{transform:scaleX(1);opacity:1}
 .posts,.roles,.spec{perspective:1600px;perspective-origin:50% 30%}
+/* No scroll-snap or chapter dimming: michaelcantow.com switches both off on its live
+   page because they fight the scroll. Scrolling stays native. */
+/* Nav hides on scroll down, returns on scroll up (michaelcantow.com) */
+nav.top{transition:transform 520ms var(--ease-spring),opacity 400ms var(--ease-reveal)}
+nav.top.hidden{transform:translateY(-110%);opacity:0}
+#header{transition:transform 520ms var(--ease-spring),opacity 400ms var(--ease-reveal)}
+#header.hidden{transform:translateY(-110%);opacity:0}
 
-/* Sectioned scroll progression + chapter spotlight (desktop, motion allowed) */
-@media (min-width:900px) and (prefers-reduced-motion:no-preference){
-  html{scroll-snap-type:y proximity;scroll-padding-top:0}
-  body>section{scroll-snap-align:start;scroll-snap-stop:normal}
-  body.chapters>section{transition:filter 600ms var(--ease-reveal),opacity 600ms var(--ease-reveal)}
-  body.chapters>section:not(.is-chapter-active){filter:brightness(.64) saturate(.9);opacity:.82}
-}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
