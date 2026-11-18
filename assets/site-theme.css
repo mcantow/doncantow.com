@@ -1,0 +1,60 @@
+/* Dad's site theme (Nov 2026): quiet dark, matched to the horizon-line home page. Loaded after static-copy.css on every page. */
+/* shared: tidy the empty dark footer band */
+#footer{padding-bottom:0!important}
+#footer .footer-inner{padding-top:18px!important;padding-bottom:18px!important}
+#footerBlocks .sqs-html-content:empty{display:none}
+/* Mature founder base: restrained, refined; few colours, hairlines, text links */
+body.homepage .banner-thumbnail-wrapper{display:none!important}
+body.homepage #content .sqs-layout{display:none!important}
+body.homepage main#page{padding:0!important;margin:0!important;max-width:none!important}
+body.homepage #header{position:relative!important}
+#header{border-bottom:1px solid var(--line)!important;background:var(--bg)!important}
+#siteTitle a{font-family:proxima-nova,sans-serif!important;font-weight:500!important;letter-spacing:.24em!important;text-transform:uppercase!important;font-size:14px!important;color:var(--ink)!important}
+#siteTitle a:before{content:"";display:inline-block;width:18px;height:18px;margin-right:14px;vertical-align:-3px;background:url(favicon.png) center/contain no-repeat;border-radius:3px}
+#mainNavigation a,#mainNavigation .folder-toggle{color:var(--mute)!important;letter-spacing:.14em!important;font-weight:500!important}
+#mainNavigation > .collection:last-child > a{background:transparent!important;border:1px solid var(--line2)!important;color:var(--ink)!important;border-radius:2px!important}
+.subnav{background:var(--bg)!important;border:1px solid var(--line)}
+.subnav a{color:var(--ink)!important}
+.mobile-nav-toggle div{background:var(--ink)!important}
+body,#siteWrapper,#canvas{background:var(--bg)!important}
+#content h1,#content h2,#content h3,#content h1 *,#content h2 *,#content h3 *{color:var(--ink)!important}
+#content p,#content li,#content strong,#content span{color:var(--body)!important}
+.nav-section-label{color:var(--ink)!important}
+.folder-nav a{color:var(--mute)!important}
+.folder-nav .active-link a{color:var(--ink)!important}
+.html-block a:not(.sqs-block-button-element),.entry-more-link a,.summary-excerpt a{color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:4px;text-decoration-color:var(--line2)!important}
+time,.entry-dateline a{color:var(--mute)!important}
+
+#preFooter{background:var(--bg)!important;border-top:1px solid var(--line)}
+#footer,#footer .folder .subnav{background:var(--bg)!important}
+
+.mf{color:var(--ink);background:var(--bg);box-sizing:border-box;position:relative;overflow:hidden}
+.mf *{box-sizing:border-box}
+.mf .cap{font-family:proxima-nova,sans-serif;font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
+.mf .serif{font-family:adobe-garamond-pro,Georgia,serif;font-weight:400}
+.mf .sans{font-family:proxima-nova,sans-serif}
+.mf .links{display:flex;gap:34px;flex-wrap:wrap;margin-top:40px}
+.mf .links a{font-family:proxima-nova,sans-serif;font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)!important;text-decoration:none!important;padding-bottom:8px;border-bottom:1px solid var(--line2)}
+.mf .bw{display:block;object-fit:cover;object-position:50% 16%}
+.mf .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.mf .fact{padding:26px 28px 0 0}
+.mf .fact b{display:block;font-family:adobe-garamond-pro,Georgia,serif;font-weight:400;font-size:30px;color:var(--ink)}
+.mf .fact span{display:block;margin-top:8px;font-family:proxima-nova,sans-serif;font-size:12px;letter-spacing:.06em;color:var(--mute)}
+.mf h1{color:var(--ink)!important}
+
+/* sparing colour: one muted accent per look */
+.mf .cap{color:var(--accent)!important}
+.mf .links a{border-bottom-color:var(--accent)!important}
+.nav-section-label{color:var(--accent)!important}
+.html-block a:not(.sqs-block-button-element),.entry-more-link a,.summary-excerpt a{text-decoration-color:var(--accent)!important}
+#mainNavigation > .collection:last-child > a{border-color:var(--accent)!important}
+/* Quiet dark: near-black, serif name, framed black-and-white print */
+:root{--bg:#0a0b0d;--ink:#ebe6dc;--body:#a39d92;--mute:#6f6b64;--line:#24262a;--line2:#4a4a4e;--accent:#b9a27a}
+.mf-x .wrap{max-width:1180px;margin:0 auto;padding:120px 48px 100px;display:grid;grid-template-columns:1.35fr 1fr;gap:90px;align-items:end}
+.mf-x h1{font-size:112px;line-height:.95;margin:28px 0 0;letter-spacing:-.01em;color:var(--ink)}
+.mf-x .line{font-family:adobe-garamond-pro,Georgia,serif;font-size:26px;line-height:1.45;color:var(--body);margin:34px 0 0;max-width:560px}
+.mf-x .print{background:#f2f1ee;padding:14px 14px 46px;position:relative}
+.mf-x .print img{width:100%;aspect-ratio:4/5}
+.mf-x .print .cap{position:absolute;left:14px;bottom:16px;color:#6b6a66}
+.mf-x .facts{max-width:1180px;margin:0 auto 100px;padding:0 48px;border-top:0}
+.mf-x .facts>div{border-top:1px solid var(--line)}

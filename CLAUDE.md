@@ -3,8 +3,14 @@
 Michael's dad's personal site, moved off Squarespace to GitHub Pages.
 
 ## Rules
-- This is an **exact copy** of his Squarespace site. Preserve his work: do not remove, reword or restyle anything (pages, posts, quotes, contact details, footer) without Michael's OK.
-- The only accepted difference: Squarespace's licensed Adobe fonts are replaced by free look-alikes (EB Garamond, Montserrat) in `assets/static-copy.css`, under the original font names. Michael confirmed the copy matches (Nov 2026).
+- Started as an exact copy of his Squarespace site. Preserve his work: every page, post, quote and contact detail stays; do not remove or reword his content without Michael's OK.
+- Changes Michael approved (Nov 2026): free look-alike fonts (EB Garamond, Montserrat) in `assets/static-copy.css`; "Powered by Squarespace" footer line removed; signal-flag favicon (sailing flags D + C); a redesign Michael picked over several rounds.
+- Design direction (Michael's words): older, mature, restrained senior executive who likes things nice; "dark theme $100M sail-powered yacht". Not preppy/"retired Connecticut", not polished SaaS. Colour used sparingly; portrait in colour, never black-and-white.
+
+## Design
+- `index.html` (and `home.html`, same content): hand-built dark home page, "horizon line" opening, then chapters 01 Profile, 02 Record (spec sheet), 03 Career, 04 Writing, 05 Contact. Every fact comes from his own pages. Its CSS is inline in the page.
+- All other pages: Squarespace markup restyled by `assets/site-theme.css` (loaded after `static-copy.css`): near-black, warm off-white text, one champagne accent `#b9a27a`.
+- `assets/don-cut.png`: his headshot cut out of its white background (the original jpgs stay). `assets/favicon.png`: the flag icon.
 
 ## Layout
 - One `.html` file per Squarespace page, at the same address (`sales-value.html` serves `/sales-value`; posts under `blog/YYYY/M/D/slug.html`).
@@ -20,4 +26,4 @@ Michael's dad's personal site, moved off Squarespace to GitHub Pages.
 - Domain doncantow.com is registered at **GoDaddy** (transfer-locked, expires 2027-06-12); Squarespace only hosts the pages. Plan: move the domain to Cloudflare, then add a `CNAME` file containing `doncantow.com` and point DNS at GitHub Pages.
 
 ## Checking changes
-Compare against the live Squarespace site (while it exists) with headless Chrome; the scripts in `_workspace/tools/` show how the copy was made.
+Serve locally (`python -m http.server`) and screenshot with Playwright (Chrome channel) at desktop and phone width; after publishing, check https://doncantow.pages.dev. The scripts in `_workspace/tools/` show how the original copy was made.
