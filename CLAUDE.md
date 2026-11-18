@@ -10,7 +10,7 @@ Michael's dad's personal site, moved off Squarespace to GitHub Pages.
 ## Design
 - `index.html` (and `home.html`, same content): hand-built dark home page, "horizon line" opening, then chapters 01 Profile, 02 Record (spec sheet), 03 Career, 04 Writing, 05 Contact. Every fact comes from his own pages. Its CSS is inline in the page.
 - All other pages: Squarespace markup restyled by `assets/site-theme.css` (loaded after `static-copy.css`): near-black, warm off-white text, one champagne accent `#b9a27a`.
-- Motion: `assets/reveal.css` + `assets/reveal.js`, copied from michaelcantow.com's reveal system (fade-up with blur, card hinge, side slides, stagger, chapter spotlight + proximity snap on desktop, reduced-motion respected). The home page tags its elements by hand; on other pages the script tags Squarespace blocks itself. Hidden states only apply under `html.rv` (inline head script), so pages stay readable with scripts off. Trigger threshold is 0 (the quotes block is ~140,000px tall).
+- Motion: `assets/reveal.css` + `assets/reveal.js`, copied from michaelcantow.com's reveal system (fade-up with blur, card hinge, side slides, stagger, menu hides on scroll down, opening drifts away with scroll, reduced-motion respected). No scroll-snap or chapter dimming: michaelcantow.com turns those off on its live page because they make scrolling jumpy. The home page tags its elements by hand; on other pages the script tags Squarespace blocks itself. Hidden states only apply under `html.rv` (inline head script), so pages stay readable with scripts off. Trigger threshold is 0 (the quotes block is ~140,000px tall).
 - `assets/don-cut.png`: his headshot cut out of its white background (the original jpgs stay). `assets/favicon.png`: the flag icon.
 
 ## Layout
